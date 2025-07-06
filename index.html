@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fitness Tracker PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+    <header>
+        <h1>My Fitness Journey</h1>
+    </header>
+
+    <nav class="bottom-nav">
+        <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+            <span class="icon">🏠</span>
+            <span class="text">Today</span>
+        </a>
+        <a href="#schedule" class="nav-item" data-tab="schedule">
+            <span class="icon">📅</span>
+            <span class="text">Schedule</span>
+        </a>
+        <a href="#trackers" class="nav-item" data-tab="trackers">
+            <span class="icon">📈</span>
+            <span class="text">Trackers</span>
+        </a>
+        <a href="#recipes" class="nav-item" data-tab="recipes">
+            <span class="icon">🥗</span>
+            <span class="text">Recipes</span>
+        </a>
+    </nav>
+
+    <main class="content">
+        <section id="dashboard" class="tab-content active">
+            <h2>Today's Focus</h2>
+            <div id="todayWorkoutSummary"></div>
+            <div class="daily-inputs">
+                <h3>Daily Inputs</h3>
+                <label for="stepsInput">Steps:</label>
+                <input type="number" id="stepsInput" placeholder="Enter steps">
+                <label for="waterInput">Water (L):</label>
+                <input type="number" id="waterInput" step="0.1" placeholder="Enter liters">
+                <button id="saveDailyData">Save Today's Progress</button>
+            </div>
+            <div class="daily-summary">
+                <h3>Daily Summary</h3>
+                <p>Steps: <span id="displaySteps">0</span></p>
+                <p>Water: <span id="displayWater">0 L</span></p>
+                <p>Calories: <span id="displayCalories">0</span>, Protein: <span id="displayProtein">0g</span>, Carbs: <span id="displayCarbs">0g</span>, Fat: <span id="displayFat">0g</span></p>
+            </div>
+        </section>
+
+        <section id="schedule" class="tab-content">
+            <h2>Weekly Schedule</h2>
+            <div id="weeklyScheduleDisplay">
+                </div>
+            <p>Tap a day to see details.</p>
+        </section>
+
+        <section id="trackers" class="tab-content">
+            <h2>My Trackers</h2>
+            <div class="tracker-section">
+                <h3>Weight (Weekly)</h3>
+                <label for="weightInput">Current Weight (kg):</label>
+                <input type="number" id="weightInput" step="0.1" placeholder="Enter weight">
+                <button id="saveWeight">Save Weight</button>
+                <div id="weightHistory"></div>
+                </div>
+            <div class="tracker-section">
+                <h3>Calorie & Macro Input</h3>
+                <label for="calorieInput">Calories:</label>
+                <input type="number" id="calorieInput" placeholder="Total Calories">
+                <label for="proteinInput">Protein (g):</label>
+                <input type="number" id="proteinInput" placeholder="Total Protein">
+                <label for="carbInput">Carbs (g):</label>
+                <input type="number" id="carbInput" placeholder="Total Carbs">
+                <label for="fatInput">Fat (g):</label>
+                <input type="number" id="fatInput" placeholder="Total Fat">
+                <button id="saveMacros">Save Macros</button>
+            </div>
+        </section>
+
+        <section id="recipes" class="tab-content">
+            <h2>Protein-Rich Recipes</h2>
+            <div id="recipeList">
+                </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="pwa.js"></script>
+</body>
+</html>
