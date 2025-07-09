@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             card.innerHTML = `
                 <h3>${recipe.name}</h3>
                 <p><strong>Macros (per serving):</strong> Protein: ${recipe.protein}g, Carbs: ${recipe.carbs}g, Fat: ${recipe.fat}g, Calories: ${recipe.calories}</p>
+                <p><strong>Servings:</strong> ${recipe.servings}</p>
                 <h4>Ingredients:</h4>
                 <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
                 <h4>Instructions:</h4>
@@ -375,6 +376,7 @@ const RECIPES = [
     {
         name: "Quick Chicken & Veggie Stir-fry",
         protein: 40, carbs: 30, fat: 15, calories: 435,
+        servings:1,
         ingredients: [
             "150g chicken breast, sliced",
             "1 tbsp soy sauce",
@@ -389,6 +391,7 @@ const RECIPES = [
     {
         name: "Cottage Cheese & Berries Bowl",
         protein: 25, carbs: 20, fat: 5, calories: 225,
+        servings:1,
         ingredients: [
             "200g low-fat cottage cheese",
             "1/2 cup mixed berries",
@@ -400,6 +403,7 @@ const RECIPES = [
     {
         name: "Lentil Soup (Vegetarian Protein)",
         protein: 18, carbs: 45, fat: 8, calories: 350,
+        servings:1,
         ingredients: [
             "1 cup red lentils, rinsed",
             "4 cups vegetable broth",
